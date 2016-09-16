@@ -2,6 +2,11 @@
   clear: both;
 }
 
+/* The overall organization of this file is a little random. You want to start with
+the the more general toward the top of the file moving on to more specific as you
+go along. As a result you have yourself applying rules to the same selectors in multiple
+places*/
+
 body {
   background-color: #ffb933;
 }
@@ -12,7 +17,7 @@ a {
   color: black;
   text-decoration: none;
 }
-
+/* double clearfix! */
 .clearfix {
   clear: both;
 }
@@ -37,6 +42,7 @@ a {
 
 .logo {
   float: left;
+  /* This could be shorthanded with margin: 30px 50px */
   margin-right: 50px;
   margin-left: 50px;
   margin-top: 30px;
@@ -57,10 +63,17 @@ a {
 .logo p {
   font-family: 'Permanent Marker', cursive;
   font-size: 18px;
+  /* if you're reseting margins that are there automatically you usually want
+  to apply that to all elements of that type globally somewhere near the top */
   margin-bottom: 0px;
   margin-top: 0px;
 }
 
+/*Avoid using position relative this way. The only reason you should be using
+position relative at all is to position something such that you can use position
+absolute on one of its children. The problem is that when you do this, even though
+you see it somewhere else on the page, the dom still thinks it exists in its original
+position this will cause you huge nightmares in the long run*/
 .nav {
   display: inline-block;
   position: relative;

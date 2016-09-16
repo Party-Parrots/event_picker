@@ -1,4 +1,11 @@
 'use strict';
+//This array is and the name of the variable is effectively the only thing that's
+//different from both arts.js and learning.js. This could be extracted out into another
+//file and you could use the same logic for all three. This would save you at least
+//700 lines of code. The way I did it was to create another file that had just the
+//array of data in it, change the variable name to something generic and include that
+//script in a tag above the main logic in each file.
+
 
 var sportsArray = [['Basketball', 'Football', 'Soccer'],
                    ['College', 'Semi-Pro', 'Pro'],       // used for all 3 main categories
@@ -29,13 +36,21 @@ oneOne.addEventListener('click', oneOneClickHandler);
 oneTwo.addEventListener('click', oneTwoClickHandler);
 oneThree.addEventListener('click', oneThreeClickHandler);
 
+
 // used to short circuit click handlers once clicked
 var tierOneClicked = false;
+
+// Try not to leave commented out code in final products.
 // var tierTwoClicked = false;
 // var tierThreeClicked = false;
 
 // Baskbetball
 // click handler
+
+
+//I'm mostly going to comment on just this first event handler since the three of
+//them are pretty much the same thing.
+
 function oneOneClickHandler() {
   if (tierOneClicked === true) {
     return;
@@ -70,6 +85,8 @@ function oneOneClickHandler() {
             subCategory.appendChild(h3);
             tierThree.appendChild(subCategory);
 
+            //This could be refactored to get the text data
+            //for the array from the event.target of the click
             if (j === 0) {
               subCategory.onclick = function() {
                 storedArray.push(sportsArray[2][0]);
