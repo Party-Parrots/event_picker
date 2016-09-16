@@ -21,3 +21,4 @@ function submitRating() {
   var averageRating = document.getElementById('avg_rating');
   averageRating.textContent = 'Average Rating: ' + avgRating;
 }
+ls
